@@ -11,6 +11,7 @@ export function Categories() {
       renderItem={({item}) =>
         RenderCategoryItem({id: item.getId(), color: item.getColor(),title: item.getTitle()})
       }
+      showsVerticalScrollIndicator={false}
     />
   )
 }
