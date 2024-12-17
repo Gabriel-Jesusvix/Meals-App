@@ -1,12 +1,12 @@
-import {Text, View, Pressable } from "react-native";
+import {Text, View, Pressable, PressableProps } from "react-native";
 import { s } from './styles'
 
 
-interface CategoryGridProps {
+type CategoryGridProps = PressableProps & {
   title: string
   color: string
 }
-export function CategoryGridTitle({title, color}: CategoryGridProps) {
+export function CategoryGridTitle({title, color, ...rest}: CategoryGridProps) {
   return (
     <View style={s.gridItem}>
       <Pressable
@@ -15,6 +15,7 @@ export function CategoryGridTitle({title, color}: CategoryGridProps) {
           s.button,
           pressed ? s.buttonPressed : null,
         ]}
+        {...rest}
       >
         <View style={[s.innerContainer, { backgroundColor: color }]}>
           <Text style={s.title}>{title}</Text>
