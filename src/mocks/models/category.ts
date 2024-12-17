@@ -1,4 +1,4 @@
-interface CategoryProps {
+export interface CategoryProps {
   id: string;
   title: string;
   color: string;
