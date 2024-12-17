@@ -4,8 +4,8 @@ import { Categories } from '../screens/Categories';
 
 export function Main() {
   return (
-    <SafeAreaView>
-      <StatusBar animated barStyle={'dark-content'} translucent showHideTransition={'fade'}/>
+    <SafeAreaView style={{flex: 1, backgroundColor: "#24180f"}}>
+      <StatusBar animated barStyle={'light-content'} showHideTransition={'fade'} translucent={false} />
       <Categories />
     </SafeAreaView>
   );
