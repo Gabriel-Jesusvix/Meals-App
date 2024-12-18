@@ -4,6 +4,6 @@ export const s = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#FFFFFF"
+    backgroundColor: '#3f2f25'
   },
 });
