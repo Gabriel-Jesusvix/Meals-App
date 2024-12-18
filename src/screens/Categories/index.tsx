@@ -1,16 +1,12 @@
 import { FlatList } from "react-native";
 import { CATEGORIES } from "../../mocks/dummy-data";
 import { RenderCategoryItem } from "./components/RenderCategoryItem";
-import { useNavigation } from "@react-navigation/native";
 
 
 export function Categories() {
-  
-  
-  
   return (
     <FlatList
-      style={{backgroundColor: '#FFFFFF'}}
+      style={{backgroundColor: '#3f2f25'}}
       data={CATEGORIES}
       keyExtractor={( item )=> item.getId()}
       renderItem={({item}) =>
