@@ -2,6 +2,7 @@ import {  NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Categories } from '../screens/Categories'
 import { MealsOverview } from '../screens/MealsOverview'
+import { MealsDetails } from '../screens/MealsDetails'
 
 
 const { Navigator, Screen } = createStackNavigator()
@@ -28,6 +29,11 @@ export function Routes() {
         <Screen 
           name='MealsOverview'
           component={MealsOverview}
+          
+        />
+        <Screen 
+          name='MealsDetails'
+          component={MealsDetails}
           
         />
       </Navigator>
