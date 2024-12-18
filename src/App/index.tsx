@@ -4,7 +4,7 @@ import { AppRoutes } from '../routes';
 export function Main() {
   return (
     <>
-      <StatusBar animated barStyle={'dark-content'} showHideTransition={'fade'} translucent={false} />
+      <StatusBar animated barStyle={'light-content'} showHideTransition={'fade'} translucent={false} />
       <AppRoutes />
     </>
   );
