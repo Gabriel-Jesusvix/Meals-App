@@ -6,6 +6,7 @@ export function RenderCategoryItem(props: CategoryProps) {
     <CategoryGridTitle 
       title={props.title}
       color={props.color}
+      id={props.id}
     />
   )
 }
