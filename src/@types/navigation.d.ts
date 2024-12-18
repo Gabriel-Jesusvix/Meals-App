@@ -5,6 +5,9 @@ export declare global {
       MealsOverview: {
         id: string
       };
+      MealsDetails: {
+        id: string
+      };
     }
   }
 }
