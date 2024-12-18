@@ -1,11 +1,13 @@
-import { StatusBar } from 'react-native';
+import { SafeAreaView, StatusBar, View } from 'react-native';
 import { AppRoutes } from '../routes';
 
 export function Main() {
   return (
     <>
       <StatusBar animated barStyle={'dark-content'} showHideTransition={'fade'} translucent={false} />
-      <AppRoutes />
+      <SafeAreaView style={{ flex: 1 }}>
+        <AppRoutes />
+      </SafeAreaView>
     </>
   );
 }
