@@ -28,9 +28,7 @@ export function Routes() {
         <Screen 
           name='MealsOverview'
           component={MealsOverview}
-          options={{
-            title: 'Overview',
-          }}
+          
         />
       </Navigator>
     </NavigationContainer>
