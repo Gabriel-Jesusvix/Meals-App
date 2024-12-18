@@ -11,16 +11,26 @@ export function Routes() {
     <NavigationContainer>
       <Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#351401',
+          },
+          headerTintColor: 'white',
         }}
       >
         <Screen 
           name='MealCategories'
           component={Categories}
+          options={{
+            title: 'Categorias',
+          }}
         />
         <Screen 
           name='MealsOverview'
           component={MealsOverview}
+          options={{
+            title: 'Overview',
+          }}
         />
       </Navigator>
     </NavigationContainer>
