@@ -40,9 +40,10 @@ export function MealsOverview() {
   });
 
   function renderMealItem({item} : Meal) {
-    const { title, imageUrl,affordability, complexity, duration } = item
+    const { id, title, imageUrl,affordability, complexity, duration } = item
 
     const mealItemProps = {
+      id: id!,
       title: title!,
       imageUrl: imageUrl!,
       affordability: affordability!,
