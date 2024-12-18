@@ -9,7 +9,8 @@ export function Categories() {
   
   
   return (
-    <FlatList 
+    <FlatList
+      style={{backgroundColor: '#FFFFFF'}}
       data={CATEGORIES}
       keyExtractor={( item )=> item.getId()}
       renderItem={({item}) =>
