@@ -1,9 +1,13 @@
 import { FlatList } from "react-native";
 import { CATEGORIES } from "../../mocks/dummy-data";
 import { RenderCategoryItem } from "./components/RenderCategoryItem";
+import { useNavigation } from "@react-navigation/native";
 
 
 export function Categories() {
+  
+  
+  
   return (
     <FlatList 
       data={CATEGORIES}
@@ -11,7 +15,7 @@ export function Categories() {
       renderItem={({item}) =>
         RenderCategoryItem({id: item.getId(), color: item.getColor(),title: item.getTitle()})
       }
-      showsVerticalScrollIndicator={false}
+       showsVerticalScrollIndicator={false}
     />
   )
 }
