@@ -6,6 +6,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { MEALS } from "../../mocks/dummy-data";
 import { MealDetails } from "./components/MealsDetails";
 import { useLayoutEffect } from "react";
+import { FavoriteButton } from "./components/FavoriteButton";
 
 type RouteParamProps = {
   id: string;
@@ -17,18 +18,41 @@ export function MealsDetails() {
   const selectedMeal = MEALS.find((meal) => meal.id === id);
   const navigation = useNavigation()
 
+  function headerButtonPressHandler() {
+    console.log('Pressed!');
+  }
+
+
   useLayoutEffect(() => {
-      const categoryTitle = MEALS.find(
-        (meal) => meal.getId() === id
-      )?.getTitle();
-  
-      navigation.setOptions({
-        title: categoryTitle,
-      });
-    }, [id, navigation]);
+    const categoryTitle = MEALS.find(
+      (meal) => meal.getId() === id
+    )?.getTitle();
+
+    navigation.setOptions({
+      title: categoryTitle,
+    });
+  }, [id, navigation]);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return (
+          <View
+            style={{ marginRight: 8 }}
+          >
+            <FavoriteButton
+              icon="star-outline"
+              color="white"
+              onPress={headerButtonPressHandler}
+            />
+          </View>
+        );
+      },
+    });
+  }, [navigation, headerButtonPressHandler]);
 
   return (
-    <ScrollView 
+    <ScrollView
       style={s.rootContainer}
       showsVerticalScrollIndicator={false}
     >
