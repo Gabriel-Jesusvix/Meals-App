@@ -34,7 +34,6 @@ export function Routes() {
         <Screen 
           name='MealsDetails'
           component={MealsDetails}
-          
         />
       </Navigator>
     </NavigationContainer>
