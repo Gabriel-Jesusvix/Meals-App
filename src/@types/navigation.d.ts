@@ -8,6 +8,7 @@ export declare global {
       MealsDetails: {
         id: string
       };
+      Favorite: undefined
     }
   }
 }
