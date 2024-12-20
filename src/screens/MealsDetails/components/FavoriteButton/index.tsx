@@ -1,10 +1,10 @@
 import { Pressable,PressableProps } from 'react-native';
-import { Ionicons as Icon  } from '@expo/vector-icons';
+import { MaterialIcons as Icon  } from '@expo/vector-icons';
 import { s } from './styles';
-import type { Ionicons } from '@expo/vector-icons';
+import type { MaterialIcons } from '@expo/vector-icons';
 
 type FavoriteButtonProps = PressableProps & {
-  icon:  keyof typeof Ionicons.glyphMap;
+  icon:  keyof typeof MaterialIcons.glyphMap
   color: string
 }
 export function FavoriteButton({ icon, color, ...rest }: FavoriteButtonProps) {

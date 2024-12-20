@@ -7,6 +7,7 @@ import { MEALS } from "../../mocks/dummy-data";
 import { MealDetails } from "./components/MealsDetails";
 import { useLayoutEffect } from "react";
 import { FavoriteButton } from "./components/FavoriteButton";
+import { useFavorite } from "../../store/context/hooks/useFavorite";
 
 type RouteParamProps = {
   id: string;
@@ -16,10 +17,16 @@ export function MealsDetails() {
   const route = useRoute();
   const { id } = route.params as RouteParamProps;
   const selectedMeal = MEALS.find((meal) => meal.id === id);
+  const { ids, removeFavorite, addFavorite } = useFavorite()
+  const mealIsFavorite = ids.includes(id);
   const navigation = useNavigation()
 
-  function headerButtonPressHandler() {
-    console.log('Pressed!');
+  function changeFavoritesStatusHandler() {
+    if(mealIsFavorite) {
+      removeFavorite(id)
+    } else {
+      addFavorite(id)
+    }
   }
 
 
@@ -41,15 +48,16 @@ export function MealsDetails() {
             style={{ marginRight: 8 }}
           >
             <FavoriteButton
-              icon="star-outline"
-              color="white"
-              onPress={headerButtonPressHandler}
+              //@ts-ignore
+              icon={mealIsFavorite ? 'favorite' : 'favorite-outline'}
+              color="#e2b497"
+              onPress={changeFavoritesStatusHandler}
             />
           </View>
         );
       },
     });
-  }, [navigation, headerButtonPressHandler]);
+  }, [navigation, changeFavoritesStatusHandler]);
 
   return (
     <ScrollView
