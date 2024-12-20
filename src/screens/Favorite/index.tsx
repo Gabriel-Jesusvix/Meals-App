@@ -3,14 +3,19 @@ import { s } from "./styles";
 import { useFavorite } from "../../store/context/hooks/useFavorite";
 import { MEALS } from "../../mocks/dummy-data";
 import { MealsList } from "./components/MealsList";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/redux/store";
 
 
 export function Favorite() {
+  //Context
   const { ids } = useFavorite()
+  //Redux
+  const favoriteMealIds = useSelector((state:RootState) => state.favoriteMeals.ids);
+
   const favoriteMeals = MEALS.filter((meal) =>
-    ids.includes(meal.getId())
+    favoriteMealIds.includes(meal.getId())
   );
-  console.log("favoriteMeals",favoriteMeals)
 
   if (favoriteMeals.length === 0) {
     return (
