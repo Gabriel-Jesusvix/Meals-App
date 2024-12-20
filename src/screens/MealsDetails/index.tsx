@@ -8,7 +8,9 @@ import { MealDetails } from "./components/MealsDetails";
 import { useLayoutEffect } from "react";
 import { FavoriteButton } from "./components/FavoriteButton";
 import { useFavorite } from "../../store/context/hooks/useFavorite";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite ,removeFavorite } from  '../../store/redux/favorite'
+import { RootState } from "../../store/redux/store";
 type RouteParamProps = {
   id: string;
 }
@@ -17,15 +19,24 @@ export function MealsDetails() {
   const route = useRoute();
   const { id } = route.params as RouteParamProps;
   const selectedMeal = MEALS.find((meal) => meal.id === id);
-  const { ids, removeFavorite, addFavorite } = useFavorite()
-  const mealIsFavorite = ids.includes(id);
+  const favoriteMealsIds = useSelector((state:RootState) => state.favoriteMeals.ids)
+  const dispatch = useDispatch()
+  // const { ids, removeFavorite, addFavorite } = useFavorite()
+  const mealIsFavorite = favoriteMealsIds.includes(id);
   const navigation = useNavigation()
 
   function changeFavoritesStatusHandler() {
     if(mealIsFavorite) {
-      removeFavorite(id)
+      //Context
+      // removeFavorite(id)
+      //Redux
+      dispatch(removeFavorite({id}))
     } else {
-      addFavorite(id)
+      //context
+      // addFavorite({id})
+
+      //Redux
+      dispatch(addFavorite({id}))
     }
   }
 
