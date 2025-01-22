@@ -19,14 +19,20 @@
       "buildNumber": "1.0.0"
     },
     "android": {
-      "versionCode": 1,
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#10365B"
       },
+      "package": "com.gabriel_jesusvix.mealapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b10483d1-0d9e-4058-88e0-56d4a2d66b5b"
+      }
     }
   }
 }
